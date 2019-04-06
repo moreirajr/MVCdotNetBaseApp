@@ -51,6 +51,10 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\MVCdotNetBaseApp.Application\MVCdotNetBaseApp.Application.csproj">
+      <Project>{96C4C33C-F81E-415D-A565-F7FFB9A0D592}</Project>
+      <Name>MVCdotNetBaseApp.Application</Name>
+    </ProjectReference>
     <ProjectReference Include="..\MVCdotNetBaseApp.Data\MVCdotNetBaseApp.Data.csproj">
       <Project>{3B860292-8D3D-4B42-A5E8-8F2CF088E070}</Project>
       <Name>MVCdotNetBaseApp.Data</Name>

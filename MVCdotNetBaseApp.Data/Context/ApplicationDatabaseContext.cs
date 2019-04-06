@@ -1,52 +1,56 @@
-﻿using System.Data.Entity;
+﻿using MVCdotNetBaseApp.Data.Mapping;
+using MVCdotNetBaseApp.Domain.Entities.Formulario;
+using System.Data.Entity;
 using System.Data.Entity.ModelConfiguration.Conventions;
 
 
 namespace MVCdotNetBaseApp.Data.Context
 {
-    public class ApplicationDatabaseContext : DbContext
-    {
-        public ApplicationDatabaseContext() : base("ApplicationConnection")
-        {
-            Configuration.LazyLoadingEnabled = true;
-            Configuration.ProxyCreationEnabled = true;
+	public class ApplicationDatabaseContext : DbContext
+	{
+		public ApplicationDatabaseContext() : base("ApplicationConnection")
+		{
+			Configuration.LazyLoadingEnabled = true;
+			Configuration.ProxyCreationEnabled = true;
 
-            InitializeDatabase();
-        }
+			InitializeDatabase();
+		}
 
-        private void InitializeDatabase()
-        {
-            //if (Database.Exists())
-            //    Database.Delete();
+		private void InitializeDatabase()
+		{
+			//if (Database.Exists())
+			//    Database.Delete();
 
-            if (!Database.Exists())
-            {
-                Database.Initialize(true);
-                new DatabaseInitializer(this);
-            }
-        }
+			if (!Database.Exists())
+			{
+				Database.Initialize(true);
+				new DatabaseInitializer(this);
+			}
+		}
 
-        protected override void OnModelCreating(DbModelBuilder modelBuilder)
-        {
-            base.OnModelCreating(modelBuilder);
+		protected override void OnModelCreating(DbModelBuilder modelBuilder)
+		{
+			base.OnModelCreating(modelBuilder);
 
-            modelBuilder.Conventions.Remove<PluralizingTableNameConvention>();
-            modelBuilder.Conventions.Remove<OneToManyCascadeDeleteConvention>();
-            modelBuilder.Conventions.Remove<ManyToManyCascadeDeleteConvention>();
+			modelBuilder.Conventions.Remove<PluralizingTableNameConvention>();
+			modelBuilder.Conventions.Remove<OneToManyCascadeDeleteConvention>();
+			modelBuilder.Conventions.Remove<ManyToManyCascadeDeleteConvention>();
 
-            modelBuilder.Properties<string>().Configure(p => p.HasColumnType("varchar"));
-            modelBuilder.Properties<string>().Configure(p => p.HasMaxLength(255));
+			modelBuilder.Properties<string>().Configure(p => p.HasColumnType("varchar"));
+			modelBuilder.Properties<string>().Configure(p => p.HasMaxLength(255));
 
-            InitializeTablesConfiguration(modelBuilder);
-        }
+			InitializeTablesConfiguration(modelBuilder);
+		}
 
-        private void InitializeTablesConfiguration(DbModelBuilder modelBuilder)
-        {
-            //modelBuilder.Configurations.Add(new EntityMapping());
-        }
+		private void InitializeTablesConfiguration(DbModelBuilder modelBuilder)
+		{
+			modelBuilder.Configurations.Add(new FormularioMapping());
+			modelBuilder.Configurations.Add(new CampoMapping());
+		}
 
-        #region Db Sets
-        //public DbSet<EntityName> EntityNamePlural {get;set;}
-        #endregion
-    }
+		#region Db Sets
+		public DbSet<Formulario> Formularios { get; set; }
+		public DbSet<Campo> Campos { get; set; }
+		#endregion
+	}
 }

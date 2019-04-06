@@ -50,8 +50,12 @@
   <ItemGroup>
     <Compile Include="Context\ApplicationDatabaseContext.cs" />
     <Compile Include="Context\DatabaseInitializer.cs" />
+    <Compile Include="Mapping\BaseMapping.cs" />
+    <Compile Include="Mapping\CampoMapping.cs" />
+    <Compile Include="Mapping\FormularioMapping.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Repositories\BaseRepository.cs" />
+    <Compile Include="Repositories\FormularioRepository.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
@@ -59,7 +63,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Interfaces\" />
-    <Folder Include="Mapping\" />
     <Folder Include="Migrations\" />
   </ItemGroup>
   <ItemGroup>

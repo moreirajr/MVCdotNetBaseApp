@@ -31,7 +31,11 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="DomainValidation, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\DomainValidation.1.0.0\lib\net453\DomainValidation.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
@@ -41,11 +45,25 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Entities\Base\BaseService.cs" />
     <Compile Include="Entities\Base\BaseEntity.cs" />
     <Compile Include="Entities\Base\Interfaces\IBaseRepository.cs" />
     <Compile Include="Entities\Base\Interfaces\IBaseService.cs" />
+    <Compile Include="Entities\Base\Services\BaseService.cs" />
+    <Compile Include="Entities\Base\Specifications\EntityHasValidId.cs" />
+    <Compile Include="Entities\Formulario\Campo.cs" />
+    <Compile Include="Entities\Formulario\Formulario.cs" />
+    <Compile Include="Entities\Formulario\Services\FormularioService.cs" />
+    <Compile Include="Entities\Formulario\Interfaces\IFormularioRepository.cs" />
+    <Compile Include="Entities\Formulario\Interfaces\IFormularioService.cs" />
+    <Compile Include="Entities\Formulario\Specifications\FormularioCamposHasMinimumTypes.cs" />
+    <Compile Include="Entities\Formulario\Specifications\FormularioHasCampos.cs" />
+    <Compile Include="Entities\Formulario\Validations\FormularioCanBeDeleted.cs" />
+    <Compile Include="Entities\Formulario\Validations\FormularioIsValid.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup />
+  <ItemGroup>
+    <None Include="packages.config" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

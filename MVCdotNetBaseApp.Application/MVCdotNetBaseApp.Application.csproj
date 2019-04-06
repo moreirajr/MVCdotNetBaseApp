@@ -50,11 +50,14 @@
   <ItemGroup>
     <Compile Include="BaseAppService.cs" />
     <Compile Include="Interfaces\IBaseAppService.cs" />
+    <Compile Include="Interfaces\IFormularioAppService.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Services\FormularioAppService.cs" />
     <Compile Include="ViewModels\BaseViewModel.cs" />
+    <Compile Include="ViewModels\CampoViewModel.cs" />
+    <Compile Include="ViewModels\FormularioViewModel.cs" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="Services\" />
     <Folder Include="ViewModels\SearchFilters\" />
   </ItemGroup>
   <ItemGroup>
