@@ -65,6 +65,10 @@
       <Project>{33ED5028-80AF-4E01-93E1-A82C4CD16984}</Project>
       <Name>MVCdotNetBaseApp.Domain</Name>
     </ProjectReference>
+    <ProjectReference Include="..\MVCdotNetBaseApp.Util\MVCdotNetBaseApp.Util.csproj">
+      <Project>{D03318CB-2CCB-4C30-934B-0A980D5480FF}</Project>
+      <Name>MVCdotNetBaseApp.Util</Name>
+    </ProjectReference>
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />

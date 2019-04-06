@@ -57,11 +57,17 @@
     <Compile Include="Entities\Formulario\Interfaces\IFormularioService.cs" />
     <Compile Include="Entities\Formulario\Specifications\FormularioCamposHasMinimumTypes.cs" />
     <Compile Include="Entities\Formulario\Specifications\FormularioHasCampos.cs" />
+    <Compile Include="Entities\Formulario\Specifications\FormularioHasDate.cs" />
     <Compile Include="Entities\Formulario\Validations\FormularioCanBeDeleted.cs" />
     <Compile Include="Entities\Formulario\Validations\FormularioIsValid.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <ProjectReference Include="..\MVCdotNetBaseApp.Util\MVCdotNetBaseApp.Util.csproj">
+      <Project>{D03318CB-2CCB-4C30-934B-0A980D5480FF}</Project>
+      <Name>MVCdotNetBaseApp.Util</Name>
+    </ProjectReference>
+  </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
   </ItemGroup>

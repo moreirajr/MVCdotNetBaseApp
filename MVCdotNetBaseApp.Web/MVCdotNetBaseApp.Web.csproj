@@ -194,11 +194,11 @@
     <Content Include="Scripts\modernizr-2.8.3.js" />
     <Content Include="src\app\app.component.css" />
     <Content Include="src\app\app.component.html" />
+    <Content Include="src\app\formularios\formulario-create\formulario-create.component.css" />
+    <Content Include="src\app\formularios\formulario-create\formulario-create.component.html" />
+    <Content Include="src\app\formularios\formulario-list\formulario-list.component.css" />
+    <Content Include="src\app\formularios\formulario-list\formulario-list.component.html" />
     <Content Include="src\favicon.ico" />
-    <Content Include="src\formularios\formulario-create\formulario-create.component.css" />
-    <Content Include="src\formularios\formulario-create\formulario-create.component.html" />
-    <Content Include="src\formularios\formulario-list\formulario-list.component.css" />
-    <Content Include="src\formularios\formulario-list\formulario-list.component.html" />
     <Content Include="src\index.html" />
     <Content Include="src\karma.conf.js" />
     <Content Include="src\styles.css" />
@@ -248,19 +248,25 @@
       <Project>{EF12ED52-A1D3-4FA8-B3F2-70EAD6603041}</Project>
       <Name>MVCdotNetBaseApp.Ioc</Name>
     </ProjectReference>
+    <ProjectReference Include="..\MVCdotNetBaseApp.Util\MVCdotNetBaseApp.Util.csproj">
+      <Project>{D03318CB-2CCB-4C30-934B-0A980D5480FF}</Project>
+      <Name>MVCdotNetBaseApp.Util</Name>
+    </ProjectReference>
   </ItemGroup>
   <ItemGroup>
     <TypeScriptCompile Include="e2e\src\app.e2e-spec.ts" />
     <TypeScriptCompile Include="e2e\src\app.po.ts" />
     <TypeScriptCompile Include="src\app\app.component.spec.ts" />
     <TypeScriptCompile Include="src\app\app.component.ts" />
+    <TypeScriptCompile Include="src\app\app.routing.module.ts" />
     <TypeScriptCompile Include="src\app\app.module.ts" />
+    <TypeScriptCompile Include="src\app\formularios\formulario.ts" />
+    <TypeScriptCompile Include="src\app\formularios\formulario-create\formulario-create.component.spec.ts" />
+    <TypeScriptCompile Include="src\app\formularios\formulario-create\formulario-create.component.ts" />
+    <TypeScriptCompile Include="src\app\formularios\formulario-list\formulario-list.component.spec.ts" />
+    <TypeScriptCompile Include="src\app\formularios\formulario-list\formulario-list.component.ts" />
     <TypeScriptCompile Include="src\environments\environment.prod.ts" />
     <TypeScriptCompile Include="src\environments\environment.ts" />
-    <TypeScriptCompile Include="src\formularios\formulario-create\formulario-create.component.spec.ts" />
-    <TypeScriptCompile Include="src\formularios\formulario-create\formulario-create.component.ts" />
-    <TypeScriptCompile Include="src\formularios\formulario-list\formulario-list.component.spec.ts" />
-    <TypeScriptCompile Include="src\formularios\formulario-list\formulario-list.component.ts" />
     <TypeScriptCompile Include="src\main.ts" />
     <TypeScriptCompile Include="src\polyfills.ts" />
     <TypeScriptCompile Include="src\test.ts" />

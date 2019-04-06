@@ -12,12 +12,10 @@ namespace MVCdotNetBaseApp.Data.Mapping
 				.HasMaxLength(50);
 
 			Property(x => x.Tipo)
-				.IsRequired()
-				.HasMaxLength(50);
+				.IsRequired();
 
 			Property(x => x.TipoValor)
-				.IsRequired()
-				.HasMaxLength(50);
+				.IsRequired();
 
 			HasRequired(cmp => cmp.Formulario)
 				.WithMany()

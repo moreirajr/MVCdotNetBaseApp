@@ -4,6 +4,7 @@ using MVCdotNetBaseApp.Domain.Entities.Formulario;
 using MVCdotNetBaseApp.Domain.Entities.Formulario.Interfaces;
 using System.Linq;
 
+
 namespace MVCdotNetBaseApp.Application.Services
 {
 	public class FormularioAppService : BaseAppService<Formulario, FormularioViewModel>, IFormularioAppService

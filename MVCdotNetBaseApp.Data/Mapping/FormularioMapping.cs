@@ -12,7 +12,7 @@ namespace MVCdotNetBaseApp.Data.Mapping
 				.HasMaxLength(70);
 
 			Property(x => x.DataInicio)
-				.IsRequired();
+				.IsOptional();
 
 			Property(x => x.DataFim)
 				.IsOptional();

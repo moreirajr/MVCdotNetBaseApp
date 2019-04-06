@@ -1,0 +1,54 @@
+<form>
+  <p>
+    <mat-form-field>
+      <input matInput placeholder="Nome do Formulário" [formControl]="nomeFormControl" [errorStateMatcher]="matcher">
+      <mat-error *ngIf="nomeFormControl.hasError('nome') && !nomeFormControl.hasError('required')">
+        Informe um nome válido
+      </mat-error>
+      <mat-error *ngIf="nomeFormControl.hasError('required')">
+        Campo <strong>obrigatório</strong>
+      </mat-error>
+    </mat-form-field>
+  </p>
+  <p>
+    <mat-form-field>
+      <input matInput [matDatepicker]="pickerInicial" placeholder="Data Inicial">
+      <mat-datepicker-toggle matSuffix [for]="pickerInicial"></mat-datepicker-toggle>
+      <mat-datepicker #pickerInicial [startAt]="startDate"></mat-datepicker>
+    </mat-form-field>
+
+    <mat-form-field>
+      <input matInput [matDatepicker]="pickerFinal" placeholder="Data Final">
+      <mat-datepicker-toggle matSuffix [for]="pickerFinal"></mat-datepicker-toggle>
+      <mat-datepicker #pickerFinal [startAt]="endDate"></mat-datepicker>
+    </mat-form-field>
+  </p>
+
+  <mat-form-field>
+    <input matInput placeholder="Descrição">
+  </mat-form-field>
+
+  <mat-form-field>
+    <mat-label>Tipo de Campo</mat-label>
+    <mat-select>
+      <mat-option *ngFor="let campo of tiposCampo" [value]="campo.value">
+        {{campo.text}}
+      </mat-option>
+    </mat-select>
+  </mat-form-field>
+
+  <mat-form-field>
+    <mat-label>Valor do Campo</mat-label>
+    <mat-select>
+      <mat-option *ngFor="let campo of tiposValor" [value]="campo.value">
+        {{campo.text}}
+      </mat-option>
+    </mat-select>
+  </mat-form-field>
+  <button mat-mini-fab color="primary">+</button>
+
+  <div class="row">
+    <button mat-raised-button color="primary">Salvar</button>
+    <button mat-raised-button>Cancelar</button>
+  </div>
+</form>
