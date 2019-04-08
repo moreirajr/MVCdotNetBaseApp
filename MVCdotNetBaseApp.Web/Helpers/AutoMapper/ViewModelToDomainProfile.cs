@@ -1,4 +1,6 @@
-﻿using AutoMapper;
+using AutoMapper;
+using MVCdotNetBaseApp.Application.ViewModels;
+using MVCdotNetBaseApp.Domain.Entities.Formulario;
 
 
 namespace MVCdotNetBaseApp.Web.Helpers.AutoMapper
@@ -14,8 +16,7 @@ namespace MVCdotNetBaseApp.Web.Helpers.AutoMapper
 
         public ViewModelToDomainProfile()
         {
-            //CreateMap<TEntity, TEntityViewModel>().ReverseMap();
+            CreateMap<Formulario, FormularioViewModel>().ReverseMap();
         }
-
     }
 }

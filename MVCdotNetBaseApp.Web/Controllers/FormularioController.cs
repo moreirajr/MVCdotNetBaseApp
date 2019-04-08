@@ -1,4 +1,5 @@
 using MVCdotNetBaseApp.Application.Interfaces;
+using MVCdotNetBaseApp.Application.ViewModels;
 using MVCdotNetBaseApp.Util.Enums;
 using System;
 using System.Linq;
@@ -6,6 +7,7 @@ using System.Web.Mvc;
 
 namespace MVCdotNetBaseApp.Web.Controllers
 {
+
   public class FormularioController : Controller
   {
     private readonly IFormularioAppService _formularioAppService;
@@ -42,5 +44,16 @@ namespace MVCdotNetBaseApp.Web.Controllers
       return Json(values, JsonRequestBehavior.AllowGet);
     }
 
+    [HttpPost]
+    public void Salvar(FormularioViewModel formulario)
+    {
+      _formularioAppService.Add(formulario);
+    }
+
+    [HttpGet]
+    public JsonResult Listar()
+    {
+      return Json(_formularioAppService.GetAll(), JsonRequestBehavior.AllowGet);
+    }
   }
 }
